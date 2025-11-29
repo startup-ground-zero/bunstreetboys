@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BunStreet Boys - Premium Smash Burgers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="bun.logo.jpg" alt="BunStreet Boys" onerror="this.style.display='none'">
+                <span><span class="guitar">🎸</span> Like a Band, but with Burgers! <span class="guitar">🎸</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#order" class="btn-order">Order Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="Logo_short.jpg" alt="BunStreet Boys Logo" class="logo-image">
+            </div>
+            <p class="tagline">Premium Smash Burgers | Street Food</p>
+            <button class="btn btn-primary" onclick="scrollToMenu()">Order Now</button>
+        </div>
+    </section>
+
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="item-image">🎸</div>
+                    <h3>The Classic Chord</h3>
+                    <p>Smashed beef patty, crispy edges, melted American cheese, pickles & our secret sauce</p>
+                    <span class="price">€8.99</span>
+                    <button class="btn btn-small" onclick="addToCart('The Classic Chord', 8.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">🎵</div>
+                    <h3>The Headbanger</h3>
+                    <p>Double smashed patties, crispy bacon, pepper jack, jalapeños & spicy mayo</p>
+                    <span class="price">€11.99</span>
+                    <button class="btn btn-small" onclick="addToCart('The Headbanger', 11.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">⭐</div>
+                    <h3>The Rockstar</h3>
+                    <p>Triple threat - two beef patties, crispy bacon, fried egg, double cheese & aioli</p>
+                    <span class="price">€13.99</span>
+                    <button class="btn btn-small" onclick="addToCart('The Rockstar', 13.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">🔥</div>
+                    <h3>The Inferno Riff</h3>
+                    <p>Spicy grilled onions, ghost pepper cheese, crispy bacon & smoky chipotle sauce</p>
+                    <span class="price">€12.49</span>
+                    <button class="btn btn-small" onclick="addToCart('The Inferno Riff', 12.49)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">🌿</div>
+                    <h3>The Zen Jam</h3>
+                    <p>Plant-based smash patty, avocado, grilled mushrooms, arugula & vegan aioli</p>
+                    <span class="price">€10.99</span>
+                    <button class="btn btn-small" onclick="addToCart('The Zen Jam', 10.99)">Add to Cart</button>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-image">🎤</div>
+                    <h3>The Band Favourite</h3>
+                    <p>Smashed beef, crispy fried onions, melted cheddar, bacon, special sauce & pickles</p>
+                    <span class="price">€12.99</span>
+                    <button class="btn btn-small" onclick="addToCart('The Band Favourite', 12.99)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order">
+        <div class="container">
+            <h2>Your Order</h2>
+            <div class="order-content">
+                <div class="cart">
+                    <h3>Shopping Cart</h3>
+                    <div id="cart-items" class="cart-items">
+                        <p class="empty-cart">Your cart is empty</p>
+                    </div>
+                    <div class="cart-total">
+                        <strong>Total: $<span id="total">0.00</span></strong>
+                    </div>
+                    <button class="btn btn-primary" onclick="checkout()">Checkout</button>
+                </div>
+
+                <form class="order-form">
+                    <h3>Delivery Information</h3>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                    <textarea placeholder="Delivery Address" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>Π. Τσαλδαρη 27<br>Μελισσια</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <h3>⏰ Hours</h3>
+                    <p>Mon-Thu: 11am - 10pm<br>Fri-Sat: 11am - 11pm<br>Sun: 12pm - 9pm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <p>&copy; 2024 BunStreet Boys. All rights reserved.</p>
+                <p><span class="guitar">🎸</span> Like a band, but with Burgers! <span class="guitar">🎸</span></p>
+            </div>
+            <div class="footer-contact">
+                <p>📍 Π. Τσαλδαρη 27, Μελισσια</p>
+                <p>🌐 <a href="https://www.bunstreetboys.gr" target="_blank">www.bunstreetboys.gr</a></p>
+            </div>
+            <div class="footer-social">
+                <p>📱 Follow Us</p>
+                <p><a href="https://instagram.com/bunstreetboys" target="_blank">Instagram @bunstreetboys</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
