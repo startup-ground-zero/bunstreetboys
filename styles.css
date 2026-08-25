@@ -113,10 +113,12 @@ h3,
 }
 
 .brand-logo {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #0f0f0f;
+  padding: 2px;
   border: 2px solid var(--yellow);
 }
 
@@ -478,6 +480,9 @@ h1 {
 
 #insta-moment .section-head .insta-title {
   color: var(--yellow-deep);
+  white-space: nowrap;
+  font-size: clamp(1.35rem, 5.6vw, 3.1rem);
+  letter-spacing: -0.01em;
 }
 
 #menu .eyebrow,
@@ -628,6 +633,14 @@ h1 {
   padding: 0.25rem;
   border: 2px solid #8a6a00;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.footer-corner-logo {
+  position: static;
+  right: auto;
+  bottom: auto;
+  display: block;
+  margin: 0 0 0.65rem;
 }
 
 .menu-item {
@@ -1130,14 +1143,6 @@ h1 {
   box-shadow: none;
 }
 
-.footer-logo {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  border: 2px solid var(--yellow);
-  object-fit: cover;
-}
-
 .footer-title {
   margin: 0.65rem 0 0.2rem;
   font-family: "Bricolage Grotesque", "Trebuchet MS", sans-serif;
@@ -1464,6 +1469,10 @@ h1 {
 
   .insta-embed-frame {
     height: 620px;
+  }
+
+  #insta-moment .section-head .insta-title {
+    font-size: clamp(1.05rem, 5.2vw, 1.5rem);
   }
 }
 

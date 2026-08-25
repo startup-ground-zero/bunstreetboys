@@ -92,36 +92,42 @@ if (openStatusElements.length > 0) {
 }
 
 const revealElements = document.querySelectorAll(".reveal");
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
-
-revealElements.forEach((element) => observer.observe(element));
-
-if (heroSection && (floatingOrder || floatingCall)) {
-  const heroObserver = new IntersectionObserver(
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (floatingOrder) {
-          floatingOrder.classList.toggle("is-hidden", entry.isIntersecting);
-        }
-
-        if (floatingCall) {
-          floatingCall.classList.toggle("is-hidden", entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
         }
       });
     },
-    { threshold: 0.35 }
+    { threshold: 0.2 }
   );
 
-  heroObserver.observe(heroSection);
+  revealElements.forEach((element) => observer.observe(element));
+} else {
+  revealElements.forEach((element) => element.classList.add("is-visible"));
+}
+
+if (heroSection && (floatingOrder || floatingCall)) {
+  if ("IntersectionObserver" in window) {
+    const heroObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (floatingOrder) {
+            floatingOrder.classList.toggle("is-hidden", entry.isIntersecting);
+          }
+
+          if (floatingCall) {
+            floatingCall.classList.toggle("is-hidden", entry.isIntersecting);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    heroObserver.observe(heroSection);
+  }
 }
 
 if (backToTop) {
@@ -144,9 +150,9 @@ if (backToTop) {
 
 if (heroSlides.length > 1) {
   let currentIndex = 0;
-  const slideDurationMs = 2000;
-  const transitionMs = 1200;
-  const initialSlideDelayMs = 700;
+  const slideDurationMs = prefersReducedMotion ? 4500 : 2000;
+  const transitionMs = prefersReducedMotion ? 0 : 1200;
+  const initialSlideDelayMs = prefersReducedMotion ? 2200 : 700;
   let sliderTimer;
   let initialSlideTimeout;
 
@@ -177,10 +183,6 @@ if (heroSlides.length > 1) {
   };
 
   const startAutoSlider = () => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
     clearTimeout(initialSlideTimeout);
     clearInterval(sliderTimer);
     initialSlideTimeout = setTimeout(() => {
