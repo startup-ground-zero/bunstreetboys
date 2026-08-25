@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#060606" />
+    <meta name="robots" content="index,follow" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bun Street Boys | Smash Burger & Street Food Μελίσσια" />
+    <meta
+      property="og:description"
+      content="Premium Smash Burgers | Street Food - Π. Τσαλδάρη 27, Μελίσσια"
+    />
+    <meta property="og:image" content="logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Bun Street Boys | Smash Burger & Street Food Μελίσσια" />
+    <meta
+      name="twitter:description"
+      content="Premium Smash Burgers | Street Food - Π. Τσαλδάρη 27, Μελίσσια"
+    />
+    <meta name="twitter:image" content="logo.jpg" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: https:; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self'; connect-src 'self'; frame-src https://www.instagram.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+    <meta
+      name="description"
+      content="Bun Street Boys - modern street-burger house with loud flavor and friendly energy."
+    />
+    <title>Bun Street Boys | Modern Street Burgers</title>
+    <link rel="preload" as="image" href="logo.jpg" fetchpriority="high" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <nav class="nav-wrap">
+        <a href="#home" class="brand" aria-label="Bun Street Boys home">
+          <img src="logo.jpg" alt="Bun Street Boys logo" class="brand-logo" />
+          <span class="brand-name">Bun Street Boys</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu">
+          Menu
+        </button>
+
+        <ul class="main-menu" id="mainMenu">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a class="nav-cta" href="#contact">Order</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero section reveal">
+        <div class="hero-slider" id="heroSlider" aria-label="Bun Street Boys hero slideshow">
+          <img src="logo.jpg" alt="Bun Street Boys logo" class="hero-slide is-active" fetchpriority="high" decoding="async" />
+          <img src="sign_with_logo.jpg" alt="Bun Street Boys sign with logo" class="hero-slide" loading="lazy" decoding="async" />
+          <img src="burger_8.jpg" alt="Bun Street Boys vinyl visual" class="hero-slide" loading="lazy" decoding="async" />
+          <img src="keep_scrolling.jpg" alt="Bun Street Boys keep scrolling visual" class="hero-slide" loading="lazy" decoding="async" />
+        </div>
+        <div class="hero-dots" aria-label="Slideshow navigation">
+          <button type="button" class="hero-dot is-active" data-slide="0" aria-label="Show slide 1"></button>
+          <button type="button" class="hero-dot" data-slide="1" aria-label="Show slide 2"></button>
+          <button type="button" class="hero-dot" data-slide="2" aria-label="Show slide 3"></button>
+          <button type="button" class="hero-dot" data-slide="3" aria-label="Show slide 4"></button>
+        </div>
+        <p class="hero-bottom-phrase"># Bun Street Boys | Smash Burger & Street Food Μελίσσια</p>
+      </section>
+
+      <section class="ticker" aria-label="promotional highlights">
+        <div class="ticker-track">
+          <span>Fresh smashed daily</span>
+          <span>Friendly crew, no fuss</span>
+          <span>Built loud. Served warm.</span>
+          <span>Pick-up and late night</span>
+          <span>Fresh smashed daily</span>
+          <span>Friendly crew, no fuss</span>
+          <span>Built loud. Served warm.</span>
+          <span>Pick-up and late night</span>
+        </div>
+      </section>
+
+      <section id="menu" class="section section-yellow reveal">
+        <div class="section-head">
+          <p class="eyebrow">The Lineup</p>
+          <h2 class="menu-title">bun street menu</h2>
+        </div>
+        <div class="menu-grid">
+          <article class="menu-item feature">
+            <h3>Our Smashed Burgers</h3>
+            <ul class="menu-list">
+              <li><span>Cheese Tease</span><strong>€9.50</strong></li>
+              <li><span>Truffle Trouble</span><strong>€12.00</strong></li>
+              <li><span>Texans BBQ</span><strong>€12.00</strong></li>
+              <li><span>Bunstreet Boss</span><strong>€14.00</strong></li>
+              <li><span>Spicy Alert</span><strong>€12.00</strong></li>
+            </ul>
+          </article>
+          <article class="menu-item">
+            <h3>The Real Chicken</h3>
+            <ul class="menu-list">
+              <li><span>Coleslaw Crunch</span><strong>€11.00</strong></li>
+              <li><span>Caesar The Great</span><strong>€12.00</strong></li>
+            </ul>
+          </article>
+          <article class="menu-item">
+            <h3>The Greenies</h3>
+            <ul class="menu-list">
+              <li><span>Coleslaw</span><strong>€5.00</strong></li>
+              <li><span>Caesar</span><strong>€7.50</strong></li>
+            </ul>
+          </article>
+          <article class="menu-item">
+            <h3>Not Just Fries</h3>
+            <ul class="menu-list">
+              <li><span>OG Fries</span><strong>€4.00</strong></li>
+              <li><span>Melt Fries</span><strong>€7.00</strong></li>
+              <li><span>Beefed Up Fries</span><strong>€9.00</strong></li>
+              <li><span>Baked and Loaded</span><strong>€7.00</strong></li>
+              <li><span>Chicken Stripes</span><strong>€7.00</strong></li>
+            </ul>
+          </article>
+        </div>
+        <img src="logo.jpg" alt="" class="menu-corner-logo" aria-hidden="true" loading="lazy" decoding="async" />
+      </section>
+
+      <section id="gallery" class="section section-black reveal">
+        <div class="section-head split-head">
+          <div>
+            <p class="eyebrow">Gallery</p>
+            <h2>Burger Gallery</h2>
+          </div>
+        </div>
+
+        <div class="gallery-grid" role="region" aria-label="Bun Street gallery">
+          <figure class="photo-card photo-large">
+            <img src="burger_1.jpg" alt="Bun Street Boys burger 1" loading="lazy" />
+          </figure>
+          <figure class="photo-card">
+            <img src="burger_2.jpg" alt="Bun Street Boys burger 2" loading="lazy" />
+          </figure>
+          <figure class="photo-card">
+            <img src="burger_3.jpg" alt="Bun Street Boys burger 3" loading="lazy" />
+          </figure>
+          <figure class="photo-card photo-tall">
+            <img src="burger_4.jpg" alt="Bun Street Boys burger 4" loading="lazy" />
+          </figure>
+          <figure class="photo-card">
+            <img src="burger_5.jpg" alt="Bun Street Boys burger 5" loading="lazy" />
+          </figure>
+          <figure class="photo-card">
+            <img src="burger_16jpg.jpg" alt="Bun Street Boys burger 6" loading="lazy" />
+          </figure>
+          <figure class="photo-card">
+            <img src="burger_7.jpg" alt="Bun Street Boys burger 7" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+
+      <section id="insta-moment" class="section section-white reveal">
+        <div class="section-head">
+          <p class="eyebrow">Live Feed</p>
+          <h2>our insta burget moment</h2>
+        </div>
+        <div class="insta-embed-wrap">
+          <iframe
+            class="insta-embed-frame"
+            src="https://www.instagram.com/bunstreetboys/embed/"
+            title="Bun Street Boys Instagram live feed"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="visit" class="section section-black reveal">
+        <div class="mini-follow">
+          <p class="mini-follow-title">Find us online</p>
+          <div class="mini-links-row">
+            <a href="https://linktr.ee/bunstreetboys" target="_blank" rel="noopener noreferrer">Linktree</a>
+            <a href="https://www.instagram.com/bunstreetboys" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://www.tiktok.com/@bunstreetboys" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://www.facebook.com/bunstreetboys" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <a class="floating-order" href="#contact">Order / Visit</a>
+    <a class="floating-call" href="tel:+302108040627" aria-label="Call Bun Street Boys to order">&#9742;</a>
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
+    <div class="mobile-order-bar" aria-label="Mobile order options">
+      <a class="order-brand-link efood" href="https://www.e-food.gr/delivery/melissia/bun-street-boys-8622973" target="_blank" rel="noopener noreferrer" aria-label="Order from Efood">
+        <span class="brand-badge" aria-hidden="true"><img class="brand-logo-img" src="https://www.e-food.gr/favicon.ico" alt="" loading="lazy" decoding="async" /></span>
+        <span>Efood</span>
+      </a>
+      <a class="order-brand-link wolt" href="https://wolt.com/en/grc/athens/restaurant/bun-street-boys" target="_blank" rel="noopener noreferrer" aria-label="Order from Wolt">
+        <span class="brand-badge" aria-hidden="true"><img class="brand-logo-img" src="wolt_logo.svg" alt="" loading="lazy" decoding="async" /></span>
+        <span>Wolt</span>
+      </a>
+      <a class="mobile-call-link" href="tel:+302108040627" aria-label="Call Bun Street Boys">📞 Call</a>
+    </div>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="logo.jpg" alt="Bun Street Boys logo" class="footer-logo" />
+          <p class="footer-title">Bun Street Boys</p>
+          <p class="footer-subtitle">Smash Burger & Street Food Μελίσσια</p>
+        </div>
+
+        <div class="footer-block">
+          <h3>Address</h3>
+          <p><a class="address-link" href="https://www.google.com/maps/search/?api=1&query=P.+Tsaldari+27+Melissia" target="_blank" rel="noopener noreferrer">Π. Τσαλδάρη 27, Μελίσσια</a></p>
+        </div>
+
+        <div class="footer-block">
+          <h3>Contact</h3>
+          <p><a class="phone-link" href="tel:+302108040627">📞 210 804 0627</a></p>
+        </div>
+
+        <div class="footer-block">
+          <h3>Order</h3>
+          <div class="footer-order-links">
+            <a class="order-brand-link efood" href="https://www.e-food.gr/delivery/melissia/bun-street-boys-8622973" target="_blank" rel="noopener noreferrer" aria-label="Order from Efood">
+              <span class="brand-badge" aria-hidden="true"><img class="brand-logo-img" src="https://www.e-food.gr/favicon.ico" alt="" loading="lazy" decoding="async" /></span>
+              <span class="sr-only">e-food</span>
+            </a>
+            <a class="order-brand-link wolt" href="https://wolt.com/en/grc/athens/restaurant/bun-street-boys" target="_blank" rel="noopener noreferrer" aria-label="Order from Wolt">
+              <span class="brand-badge" aria-hidden="true"><img class="brand-logo-img" src="wolt_logo.svg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="sr-only">Wolt</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-block">
+          <h3>Hours</h3>
+          <p>Mon-Thu: 12:00 - 22:00</p>
+          <p>Fri-Sun: 12:00 - 00:00</p>
+          <p class="hours-live" data-open-status>Checking live status...</p>
+        </div>
+      </div>
+
+      <p class="footer-copy">Bun Street Boys © <span id="year"></span>. Burgers, beats, and good people.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
