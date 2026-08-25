@@ -11,6 +11,88 @@ const backToTop = document.getElementById("backToTop");
 const siteHeader = document.querySelector(".site-header");
 const openStatusElements = document.querySelectorAll("[data-open-status]");
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const orderModal = document.getElementById("orderModal");
+const orderTriggers = document.querySelectorAll("[data-order-trigger]");
+const orderCloseControls = document.querySelectorAll("[data-order-close]");
+
+let lastOrderTrigger = null;
+
+if (orderModal && orderTriggers.length > 0) {
+  orderModal.hidden = true;
+
+  const modalFocusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  const getModalFocusable = () => Array.from(orderModal.querySelectorAll(modalFocusableSelector));
+
+  const openOrderModal = (trigger) => {
+    lastOrderTrigger = trigger || null;
+    orderModal.hidden = false;
+    document.body.classList.add("is-modal-open");
+
+    const focusable = getModalFocusable();
+    if (focusable.length > 0) {
+      focusable[0].focus();
+    }
+  };
+
+  const closeOrderModal = () => {
+    orderModal.hidden = true;
+    document.body.classList.remove("is-modal-open");
+
+    if (lastOrderTrigger) {
+      lastOrderTrigger.focus();
+    }
+  };
+
+  orderTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      openOrderModal(trigger);
+    });
+  });
+
+  orderCloseControls.forEach((control) => {
+    control.addEventListener("click", () => {
+      closeOrderModal();
+    });
+  });
+
+  orderModal.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      closeOrderModal();
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (orderModal.hidden) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      event.preventDefault();
+      closeOrderModal();
+      return;
+    }
+
+    if (event.key === "Tab") {
+      const focusable = getModalFocusable();
+      if (focusable.length === 0) {
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+}
 
 if (year) {
   year.textContent = new Date().getFullYear();

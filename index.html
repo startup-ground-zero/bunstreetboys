@@ -32,6 +32,9 @@
       content="Bun Street Boys - modern street-burger house with loud flavor and friendly energy."
     />
     <title>Bun Street Boys | Modern Street Burgers</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg" />
+    <link rel="shortcut icon" type="image/jpeg" href="logo.jpg" />
+    <link rel="apple-touch-icon" href="logo.jpg" />
     <link rel="preload" as="image" href="logo.jpg" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -67,7 +70,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <a class="nav-cta" href="#contact">Order</a>
+        <a class="nav-cta" href="#" data-order-trigger aria-haspopup="dialog" aria-controls="orderModal">Order</a>
       </nav>
     </header>
 
@@ -251,19 +254,51 @@
       </section>
     </main>
 
-    <a class="floating-order" href="#contact">Order / Visit</a>
-    <a class="floating-call" href="tel:+302108040627" aria-label="Call Bun Street Boys to order">&#9742;</a>
+    <a class="floating-call" href="tel:+302108040627" aria-label="Call Bun Street Boys to order">📱</a>
     <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">↑</button>
     <div class="mobile-order-bar" aria-label="Mobile order options">
-      <a class="order-brand-link efood" href="https://www.e-food.gr/delivery/melissia/bun-street-boys-8622973" target="_blank" rel="noopener noreferrer" aria-label="Order from Efood">
+      <a class="order-brand-link efood" href="#" data-order-trigger aria-haspopup="dialog" aria-controls="orderModal" aria-label="Choose delivery platform">
         <span class="brand-badge" aria-hidden="true"><img class="brand-logo-img" src="https://www.google.com/s2/favicons?domain=e-food.gr&sz=64" alt="" loading="lazy" decoding="async" /></span>
         <span>Efood</span>
       </a>
-      <a class="order-brand-link wolt" href="https://wolt.com/en/grc/athens/restaurant/bun-street-boys" target="_blank" rel="noopener noreferrer" aria-label="Order from Wolt">
+      <a class="order-brand-link wolt" href="#" data-order-trigger aria-haspopup="dialog" aria-controls="orderModal" aria-label="Choose delivery platform">
         <span class="brand-badge" aria-hidden="true"><img class="brand-logo-img" src="wolt_logo.svg" alt="" loading="lazy" decoding="async" /></span>
         <span>Wolt</span>
       </a>
       <a class="mobile-call-link" href="tel:+302108040627" aria-label="Call Bun Street Boys">📞 Call</a>
+    </div>
+
+    <div class="order-modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle" aria-describedby="orderModalHint" hidden>
+      <div class="order-modal-backdrop" data-order-close></div>
+      <div class="order-modal-card" role="document">
+        <button class="order-modal-close" type="button" aria-label="Close order options" data-order-close>×</button>
+        <p class="order-modal-eyebrow">Order Now</p>
+        <h2 id="orderModalTitle">Choose order type</h2>
+        <p id="orderModalHint">Delivery through platform or pickup by phone.</p>
+
+        <div class="order-modal-section">
+          <h3>Delivery</h3>
+          <div class="order-modal-actions">
+            <a class="order-option delivery" href="https://wolt.com/en/grc/athens/restaurant/bun-street-boys" target="_blank" rel="noopener noreferrer" aria-label="Order delivery from Wolt">
+              <span class="order-option-logo" aria-hidden="true"><img src="wolt_logo.svg" alt="" loading="lazy" decoding="async" /></span>
+              <span>WOLT</span>
+            </a>
+            <a class="order-option delivery" href="https://www.e-food.gr/delivery/melissia/bun-street-boys-8622973" target="_blank" rel="noopener noreferrer" aria-label="Order delivery from e-food">
+              <span class="order-option-logo" aria-hidden="true"><img src="https://www.google.com/s2/favicons?domain=e-food.gr&sz=64" alt="" loading="lazy" decoding="async" /></span>
+              <span>e-food</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="order-modal-section pickup">
+          <h3>Pickup by phone <span class="pickup-badge">Pickup only</span></h3>
+          <a class="order-option pickup-call" href="tel:+302108040627" aria-label="Call for pickup order">
+            <span aria-hidden="true">📞</span>
+            <span>Call Bun-Street-Boys</span>
+          </a>
+          <p class="order-modal-note">Phone orders are for takeaway pickup only, no delivery.</p>
+        </div>
+      </div>
     </div>
 
     <footer class="site-footer" id="contact">
