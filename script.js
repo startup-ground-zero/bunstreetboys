@@ -19,13 +19,16 @@ if (year) {
 if (menuToggle && mainMenu) {
   menuToggle.addEventListener("click", () => {
     const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!expanded));
+    const nextExpanded = !expanded;
+    menuToggle.setAttribute("aria-expanded", String(nextExpanded));
+    menuToggle.classList.toggle("is-open", nextExpanded);
     mainMenu.classList.toggle("open");
   });
 
   mainMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.classList.remove("is-open");
       mainMenu.classList.remove("open");
     });
   });
@@ -33,6 +36,7 @@ if (menuToggle && mainMenu) {
   window.addEventListener("resize", () => {
     if (window.innerWidth > 760) {
       menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.classList.remove("is-open");
       mainMenu.classList.remove("open");
     }
   });
