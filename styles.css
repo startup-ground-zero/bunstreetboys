@@ -446,6 +446,10 @@ h1 {
   color: var(--yellow-deep);
 }
 
+.insta-title {
+  color: var(--yellow-deep);
+}
+
 #menu .eyebrow,
 #menu .menu-item h3 {
   color: var(--yellow-deep);
