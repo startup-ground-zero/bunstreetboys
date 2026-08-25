@@ -623,7 +623,7 @@ h1 {
 .menu-corner-logo {
   position: absolute;
   right: 18%;
-  bottom: 15.2rem;
+  bottom: calc(15.2rem + 3cm);
   transform: none;
   width: 108px;
   height: 108px;
@@ -732,8 +732,8 @@ h1 {
 
 .menu-extra-note {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: calc(12% - 2cm);
+  bottom: calc(8.2rem + 2px + 1cm);
   margin: 0;
   padding: 0.7rem 1rem;
   background: linear-gradient(135deg, #ffd11a, #ffbe0b);
@@ -1380,7 +1380,7 @@ h1 {
 
   .menu-corner-logo {
     right: 12%;
-    bottom: 14.2rem;
+    bottom: calc(14.2rem + 3cm);
   }
 
   .menu-extra-note {
@@ -1432,6 +1432,7 @@ h1 {
   }
 
   .menu-extra-note {
+    right: 0;
     width: 100%;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
