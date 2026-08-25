@@ -4,6 +4,8 @@ const year = document.getElementById("year");
 const heroSlides = document.querySelectorAll(".hero-slide");
 const heroSlider = document.getElementById("heroSlider");
 const heroDots = document.querySelectorAll(".hero-dot");
+const heroPrev = document.getElementById("heroPrev");
+const heroNext = document.getElementById("heroNext");
 const heroSection = document.querySelector(".hero");
 const floatingOrder = document.querySelector(".floating-order");
 const floatingCall = document.querySelector(".floating-call");
@@ -235,8 +237,11 @@ if (heroSlides.length > 1) {
   const slideDurationMs = prefersReducedMotion ? 4500 : 2000;
   const transitionMs = prefersReducedMotion ? 0 : 1200;
   const initialSlideDelayMs = prefersReducedMotion ? 2200 : 700;
+  const swipeThresholdPx = 35;
   let sliderTimer;
   let initialSlideTimeout;
+  let touchStartX = 0;
+  let touchEndX = 0;
 
   const updateDots = (activeIndex) => {
     heroDots.forEach((dot, index) => {
@@ -264,17 +269,25 @@ if (heroSlides.length > 1) {
     updateDots(currentIndex);
   };
 
+  const goToNextSlide = () => {
+    const nextIndex = (currentIndex + 1) % heroSlides.length;
+    goToSlide(nextIndex);
+  };
+
+  const goToPrevSlide = () => {
+    const prevIndex = (currentIndex - 1 + heroSlides.length) % heroSlides.length;
+    goToSlide(prevIndex);
+  };
+
   const startAutoSlider = () => {
     clearTimeout(initialSlideTimeout);
     clearInterval(sliderTimer);
     initialSlideTimeout = setTimeout(() => {
-      const nextIndex = (currentIndex + 1) % heroSlides.length;
-      goToSlide(nextIndex);
+      goToNextSlide();
     }, initialSlideDelayMs);
 
     sliderTimer = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % heroSlides.length;
-      goToSlide(nextIndex);
+      goToNextSlide();
     }, slideDurationMs);
   };
 
@@ -293,6 +306,49 @@ if (heroSlides.length > 1) {
     });
 
     heroSlider.addEventListener("mouseleave", () => {
+      startAutoSlider();
+    });
+
+    heroSlider.addEventListener(
+      "touchstart",
+      (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+      },
+      { passive: true }
+    );
+
+    heroSlider.addEventListener(
+      "touchend",
+      (event) => {
+        touchEndX = event.changedTouches[0].clientX;
+        const deltaX = touchEndX - touchStartX;
+
+        if (Math.abs(deltaX) < swipeThresholdPx) {
+          return;
+        }
+
+        if (deltaX < 0) {
+          goToNextSlide();
+        } else {
+          goToPrevSlide();
+        }
+
+        startAutoSlider();
+      },
+      { passive: true }
+    );
+  }
+
+  if (heroNext) {
+    heroNext.addEventListener("click", () => {
+      goToNextSlide();
+      startAutoSlider();
+    });
+  }
+
+  if (heroPrev) {
+    heroPrev.addEventListener("click", () => {
+      goToPrevSlide();
       startAutoSlider();
     });
   }
